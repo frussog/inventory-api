@@ -1,9 +1,9 @@
 pipeline {
 
-  agent any
   environment {
+  agent any
     //adding a comment for the commit test
-    DEPLOY_CREDS = credentials('deploy-anypoint-user')
+    DEPLOY_CREDS = credentials('deploy-anypoint-frussog')
     MULE_VERSION = '4.3.0'
     BG = "Test"
     WORKER = "Micro"
@@ -23,7 +23,8 @@ pipeline {
         APP_NAME = 'inventory-service-api'
       }
       steps {
-            bat 'mvn -U -V -e -B -DskipTests deploy -DmuleDeploy -Dmule.version="%MULE_VERSION%" -Danypoint.username="%DEPLOY_CREDS_USR%" -Danypoint.password="%DEPLOY_CREDS_PSW%" -Dcloudhub.app="%APP_NAME%" -Dcloudhub.environment="%ENVIRONMENT%" -Dcloudhub.bg="%BG%" -Dcloudhub.worker="%WORKER%"'
+      
+			bat 'mvn -U -V -e -B -DskipTests deploy -DmuleDeploy --Dapp.runtime=4.3 -Danypoint.username="%DEPLOY_CREDS_USR%" -Danypoint.password="%DEPLOY_CREDS_PSW%" -Dtarget=retail-revamp-server -Dtarget.type=server  -Denvironment=Sandbox'            
       }
     }
   }

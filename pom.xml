@@ -30,18 +30,16 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-					<plugin>
-					  <groupId>org.mule.tools.maven</groupId>
-					  <artifactId>mule-maven-plugin</artifactId>
-					  <version>3.4.2</version>
-					  <extensions>true</extensions>
-					  <configuration>
-					    <standaloneDeployment>
-					      <muleHome>${mule.home.test}</muleHome>
-					      <muleVersion>${app.runtime}</muleVersion>
-					    </standaloneDeployment>
-					  </configuration>
-					</plugin>				
+					<classifier>mule-application</classifier>
+					<armDeployment>
+						<muleVersion>${app.runtime}</muleVersion>
+						<uri>https://anypoint.mulesoft.com</uri>
+						<target>${target}</target>
+						<targetType>${target.type}</targetType>
+						<username>${username}</username>
+						<password>${password}</password>
+						<environment>${environment}</environment>
+					</armDeployment>
 					<sharedLibraries>
 						<sharedLibrary>
 							<groupId>mysql</groupId>

@@ -30,6 +30,18 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
+					<plugin>
+					  <groupId>org.mule.tools.maven</groupId>
+					  <artifactId>mule-maven-plugin</artifactId>
+					  <version>3.4.2</version>
+					  <extensions>true</extensions>
+					  <configuration>
+					    <standaloneDeployment>
+					      <muleHome>${mule.home.test}</muleHome>
+					      <muleVersion>${app.runtime}</muleVersion>
+					    </standaloneDeployment>
+					  </configuration>
+					</plugin>				
 					<sharedLibraries>
 						<sharedLibrary>
 							<groupId>mysql</groupId>

@@ -23,6 +23,16 @@ pipeline {
       
 			bat 'mvn -U -V -e -B -DskipTests deploy -DmuleDeploy -Dapp.runtime=4.3 -Danypoint.username="%DEPLOY_CREDS_USR%" -Danypoint.password="%DEPLOY_CREDS_PSW%" -Dtarget=retail-revamp-server -Dtarget.type=server  -Denvironment=Sandbox'            
       }
+     stage('Deploy Production') {
+      environment {
+        ENVIRONMENT = 'Production'
+        APP_NAME = 'inventory-service-api'
+      }
+      steps {
+      
+			bat 'mvn -U -V -e -B -DskipTests deploy -DmuleDeploy -Dapp.runtime=4.3 -Danypoint.username="%DEPLOY_CREDS_USR%" -Danypoint.password="%DEPLOY_CREDS_PSW%" -Dtarget=retail-revamp-server -Dtarget.type=server  -Denvironment=Sandbox'            
+      }
+      
     }
   }
 }

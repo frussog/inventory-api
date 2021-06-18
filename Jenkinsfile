@@ -32,6 +32,8 @@ pipeline {
       steps {
       
 			bat 'mvn -U -V -e -B -DskipTests deploy -DmuleDeploy -Dapp.runtime=4.3 -Danypoint.username="%DEPLOY_CREDS_USR%" -Danypoint.password="%DEPLOY_CREDS_PSW%" -Dtarget=retail-revamp-server -Dtarget.type=server  -Denvironment=Sandbox'            
-      }    
-  }
+      }
+	 }
+
+  }  
 }

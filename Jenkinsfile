@@ -1,12 +1,9 @@
 pipeline {
 
   environment {
-  agent any
     //adding a comment for the commit test
-    DEPLOY_CREDS = credentials('deploy-anypoint-frussog')
-    MULE_VERSION = '4.3.0'
-    BG = "Test"
-    WORKER = "Micro"
+    DEPLOY_CREDS = credentials('deploy-anypoint-frussog')    
+    BG = "Test"    
   }
   stages {
     stage('Build') {

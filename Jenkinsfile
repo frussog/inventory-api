@@ -21,7 +21,7 @@ pipeline {
       }
       steps {
       
-			bat 'mvn -U -V -e -B -DskipTests deploy -DmuleDeploy -Dapp.runtime=4.3 -Danypoint.username="%DEPLOY_CREDS_USR%" -Danypoint.password="%DEPLOY_CREDS_PSW%" -Dtarget=retail-revamp-sandbox -Dtarget.type=server  -Denvironment=Sandbox'            
+			bat 'mvn -U -V -e -B -DskipTests deploy -DmuleDeploy -Dapp.runtime=4.3 -Danypoint.username="%DEPLOY_CREDS_USR%" -Danypoint.password="%DEPLOY_CREDS_PSW%" -Dtarget=retail-revamp-sandbox -Dtarget.type=server  -Denvironment=Sandbox -Denv=Sandbox'            
       }      
     }
      stage('Deploy Production') {
@@ -31,7 +31,7 @@ pipeline {
       }
       steps {
       
-			bat 'mvn -U -V -e -B -DskipTests deploy -DmuleDeploy -Dapp.runtime=4.3 -Danypoint.username="%DEPLOY_CREDS_USR%" -Danypoint.password="%DEPLOY_CREDS_PSW%" -Dtarget=retail-revamp-production -Dtarget.type=server  -Denvironment=Production'            
+			bat 'mvn -U -V -e -B -DskipTests deploy -DmuleDeploy -Dapp.runtime=4.3 -Danypoint.username="%DEPLOY_CREDS_USR%" -Danypoint.password="%DEPLOY_CREDS_PSW%" -Dtarget=retail-revamp-production -Dtarget.type=server  -Denvironment=Production -Denv=Production'            
       }
 	 }
   }  

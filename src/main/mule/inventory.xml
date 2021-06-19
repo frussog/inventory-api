@@ -10,6 +10,7 @@
     <api-gateway:autodiscovery apiId="16962862" ignoreBasePath="true" doc:name="API Autodiscovery" doc:id="d2525ff1-8dc6-464d-b83d-c2d13d68fe62" flowRef="inventory-main" />
     <configuration-properties doc:name="Configuration properties" doc:id="8aa33141-b892-46f2-9c48-d181feeefc61" file="config/configuration.yaml" />
     <configuration-properties doc:name="Configuration properties" doc:id="69631ebf-bbb9-4d66-bae2-003e41782c73" file="config/${environment}-properties.yaml" />
+	<global-property doc:name="Global Property" doc:id="1a114c52-a04d-46ba-be70-fdfe9e658692" name="environment" value="Sandbox" />
 	<flow name="inventory-main">
         <http:listener config-ref="inventory-httpListenerConfig" path="/api/*">
             <http:response statusCode="#[vars.httpStatus default 200]">
